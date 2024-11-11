@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ my_musics.music_name }} by {{ my_musics.music_artist }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ my_musics.music_name }} by {{ my_musics.music_artist }}</h1>
+<p>Music ID: {{ my_musics.music_id }}</p>
+<p>Music Genre: {{ my_musics.music_genre }}</p>
+
+<!-- Edit and Delete buttons -->
+<p>
+    <a href="{% url 'edit_music' my_musics.id %}" class="button">Edit</a>
+    <a href="{% url 'delete_music' my_musics.id %}" class="button" style="background-color: #dc3545;">Delete</a>
+</p>
+
+<p><a href="{% url 'musics' %}">Back to Music List</a></p>
+
+{% endblock %}

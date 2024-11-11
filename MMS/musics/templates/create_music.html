@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+Add New Music
+{% endblock %}
+
+{% block content %}
+<h1>ADD NEW MUSIC</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This will render the form fields automatically -->
+    <div class="button-container">
+        <button type="submit" class="button">Add Music</button>
+        <a href="{% url 'musics' %}" class="button">Back to Music List</a>
+    </div>
+</form>
+
+{% endblock %}

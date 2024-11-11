@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            width: 500px;
+            height: auto;
+            background-color: #00e49f; /* Spotify green */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Drop shadow */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            padding: 20px; /* Inner padding */
+            color: white; /* Text color */
+        }
+
+        h1 {
+            color: white; /* Heading color */
+            text-align: center; /* Center the heading */
+        }
+
+        a {
+            color: #ffffff; /* Link color */
+            text-decoration: none; /* Remove underline from links */
+            text-align: center; /* Center the links */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover for links */
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 20px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF; /* Button color */
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin: 10px auto; /* Center the button */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            text-align: center; /* Center list items */
+        }
+
+        .music-list {
+        display: grid; /* Use grid layout */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+        gap: 20px; /* Space between items */
+        list-style: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        }
+
+        .music-list li {
+            border: 1px solid #ddd; /* Optional: border around each item */
+            border-radius: 5px; /* Optional: rounded corners */
+            padding: 10px; /* Padding inside each item */
+            text-align: center; /* Center text */
+            background-color: #f9f9f9; /* Optional: background color */
+            transition: box-shadow 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .music-list li:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect on hover */
+        }
+
+        .music-name {
+            font-size: 20px; /* Adjust size as needed */
+            font-weight: bold; /* Make it bold */
+        }
+
+        .music-artist {
+            font-size: 14px; /* Smaller size for the artist's name */
+            color: #666; /* Lighter color for the artist's name */
+            margin-top: 5px; /* Space between music name and artist */
+        }
+        .delete-form {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+    margin-top: 20px; /* Optional: Add some space above the form */
+}
+
+.delete-button {
+    padding: 10px 15px; /* Add padding for button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: red; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.delete-button:hover {
+    background-color: darkred; /* Darker shade on hover */
+}
+
+.cancel-button {
+    display: inline-block; /* Make it behave like a button */
+    padding: 10px 15px; /* Add padding for the cancel button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: #0056b3; /* Background color for cancel button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.cancel-button:hover {
+    background-color: darkgray; /* Darker shade on hover */
+}
+
+
+.edit-form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 20px; /* Optional: Add some space above the form */
+}
+
+.save-button {
+    padding: 10px 20px; /* Add padding for the button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: blue; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.save-button:hover {
+    background-color: darkblue; /* Darker shade on hover */
+}
+
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+
+</body>
+</html>

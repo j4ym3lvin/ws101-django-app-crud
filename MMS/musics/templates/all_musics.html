@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+
+{% block title %}
+Music Library
+{% endblock %}
+
+{% block content %}
+
+
+<h1>Music Library:</h1>
+
+<!-- Add New Music button -->
+
+<ul>
+    {% for x in my_musics %}
+    <li>
+        <a href="details/{{ x.id }}" class="music-name">{{ x.music_name }}</a>
+        <div class="music-artist">by {{ x.music_artist }}</div>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="button-container">
+    <a href="{% url 'create_music' %}" class="button">Add New Music</a>
+    <a href="/" class="button">Home</a>
+</div>
+
+
+{% endblock %}
